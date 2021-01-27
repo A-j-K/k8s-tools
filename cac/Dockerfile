@@ -114,6 +114,9 @@ RUN 	curl -sSL https://launchpad.net/ubuntu/+archive/primary/+files/libjansson4_
 	&& mv /tmp/eksctl /usr/local/bin \
 	&& chmod 755 /usr/local/bin/eksctl \
 	&& echo "===> done." \
+	&& curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 \
+	&& chmod +x skaffold \
+	&& mv skaffold /usr/local/bin/ \
 # Install aws-iam-authenticator
 	&& echo "==> Installing aws-iam-authenticator" \
 	&& curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/${AWS_IAM_AUTHENTICATOR}/bin/linux/amd64/aws-iam-authenticator \
